@@ -1,0 +1,32 @@
+.whole {
+    padding: 20px 50px 20px 50px;
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid black;
+}
+
+.leftSide {
+    border: 1px solid red;
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.rightSide {
+    border: 1px solid red;
+    width: 30%;
+    display: flex;
+    
+}
+
+.left {
+    border: 1px solid black;
+    width: 60%;
+    justify-content: space-evenly;
+}
+
+.right {
+    border: 1px solid black;
+    width: 40%;
+    justify-content: space-evenly;
+}
