@@ -1,4 +1,4 @@
-import React, {  useState } from 'react';
+import React, { useState } from "react";
 import {
   Collapse,
   Navbar,
@@ -7,8 +7,10 @@ import {
   Nav,
   NavItem,
   NavLink,
-  NavbarText
-} from 'reactstrap';
+  NavbarText,
+} from "reactstrap";
+
+import { Link } from "react-router-dom";
 
 const AppNavbar = (props) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,31 +19,36 @@ const AppNavbar = (props) => {
 
   return (
     <div>
-      <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">Goal Setter</NavbarBrand>
+      <Navbar color='light' light expand='md'>
+        <NavbarBrand href='/'>MCAT Prep</NavbarBrand>
         <NavbarToggler onClick={toggle} />
         <Collapse isOpen={isOpen} navbar>
-          <Nav className="mr-auto" navbar>
+          <Nav className='mr-auto' navbar>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
+              <NavLink href='/dashboard/'>Dashboard</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="https://github.com/cmodi-umich/goals_app">GitHub</NavLink>
+              <NavLink href='https://github.com/cmodi-umich/goals_app'>
+                GitHub
+              </NavLink>
             </NavItem>
           </Nav>
-          <NavbarText>
-            Register       
-          </NavbarText>
-          <NavbarText>
-            .    .
-          </NavbarText>
-          <NavbarText>
-            Login
-          </NavbarText>
+          <Nav className='ml-auto' navbar>
+            <NavItem>
+              <NavLink href='https://github.com/cmodi-umich/goals_app'>
+                Login
+              </NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href='https://github.com/cmodi-umich/goals_app'>
+                Register
+              </NavLink>
+            </NavItem>
+          </Nav>
         </Collapse>
       </Navbar>
     </div>
   );
-}
+};
 
 export default AppNavbar;

@@ -1,17 +1,21 @@
-import React from 'react';
-import AppNavbar from './components/AppNavbar';
-import HomePage from './components/HomePage';
-import DashBoard from './components/DashBoard';
+import React from "react";
+import AppNavbar from "./components/AppNavbar";
+import HomePage from "./components/HomePage";
+import DashBoard from "./components/DashBoard";
 
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <AppNavbar />
-      {/*<HomePage />*/}
-      <DashBoard />
-    </div>
+      <Switch>
+        <Route exact path='/' component={HomePage} />
+        <Route exact path='/dashboard' component={DashBoard} />
+      </Switch>
+    </Router>
   );
 }
 
