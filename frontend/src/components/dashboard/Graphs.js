@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import Select from "react-select";
 
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+
 const makeLabel = {
   score: "Total Score",
   chem: "Chemical and Physical Foundations of Biological Systems Score",
@@ -100,6 +102,10 @@ const Graphs = () => {
   const [selectedOption, setSelectedOption] = useState("Total Score");
   const [reload, setReload] = useState(false);
 
+  const [modal, setModal] = useState(false);
+
+  const toggle = () => setModal(!modal);
+
   const selectOptions = [
     { value: "score", label: "Total Score" },
     {
@@ -151,6 +157,21 @@ const Graphs = () => {
           options={selectOptions}
         />
       </div>
+      <Button onClick={toggle}>Add New Score</Button>
+      <Modal isOpen={modal} toggle={toggle}>
+        <ModalHeader toggle={toggle}>Modal title</ModalHeader>
+        <ModalBody>
+          <input></input>
+        </ModalBody>
+        <ModalFooter>
+          <Button color='primary' onClick={toggle}>
+            Add Score
+          </Button>{" "}
+          <Button color='secondary' onClick={toggle}>
+            Cancel
+          </Button>
+        </ModalFooter>
+      </Modal>
     </React.Fragment>
   );
 };
