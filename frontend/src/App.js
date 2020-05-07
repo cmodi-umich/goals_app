@@ -7,15 +7,20 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 import "./App.css";
 
+import { Provider } from "react-redux";
+import store from "./store";
+
 function App() {
   return (
-    <Router>
-      <AppNavbar />
-      <Switch>
-        <Route exact path='/' component={HomePage} />
-        <Route exact path='/dashboard' component={DashBoard} />
-      </Switch>
-    </Router>
+    <Provider store={store}>
+      <Router>
+        <AppNavbar />
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route exact path='/dashboard' component={DashBoard} />
+        </Switch>
+      </Router>
+    </Provider>
   );
 }
 
